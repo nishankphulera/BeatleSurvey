@@ -18,7 +18,7 @@ const Info = ({ navigation }) => {
 
   return (
     <ScrollView>
-      <View style={{ backgroundColor: "white", height: 700 }}>
+      <View style={{ backgroundColor: "white", height: 730 }}>
         <View
           style={{
             marginTop: 20,

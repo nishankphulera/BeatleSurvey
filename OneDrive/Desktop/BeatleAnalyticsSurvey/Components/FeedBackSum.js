@@ -116,7 +116,7 @@ const FeedBackSum = ({ navigation }) => {
                 >
                     <TouchableOpacity
                         style={styles.roundbutton}
-                        onPress={() => navigation.navigate("ThankYou")}
+                        onPress={() => navigation.navigate("Input")}
                     >
                         <Text style={{ fontSize: 25, color: "white" }}>Submit</Text>
                     </TouchableOpacity>

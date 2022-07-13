@@ -5,22 +5,22 @@ import Footer from './Footer'
 const ThankYou = ({ navigation }) => {
     return (
         <ScrollView>
-            <View style={{ backgroundColor: "white", height: 700,marginTop:40 }}>
+            <View style={{ backgroundColor: "white", height: 700, marginTop: 40 }}>
                 <View style={{ alignItems: "center", justifyContent: "center" }}>
                     <Text
                         style={{ alignItems: "center", fontSize: 30, color: "#939393" }}
                     >
                         THAT'S ALL THANK YOU!
-                        </Text>    
+                    </Text>
 
                 </View>
-                <View style={{ alignItems: "center",justifyContent: "center",marginTop: 30, }}>
+                <View style={{ alignItems: "center", justifyContent: "center", marginTop: 30, }}>
                     <Text style={{ alignItems: "center", fontSize: 30, color: "#939393" }}>
                         Download Your Personal App From Playstore.
                     </Text>
                 </View>
-                    
-                
+
+
                 <View
                     style={{
                         alignItems: "center",
@@ -31,14 +31,14 @@ const ThankYou = ({ navigation }) => {
                 </View>
                 <View
                     style={{
-                        marginTop:50,
+                        marginTop: 50,
                         marginBottom: 30,
-                        marginLeft:20,
+                        marginLeft: 20,
                         justifyContent: "center",
                     }}
                 >
                     <TouchableOpacity
-                        style={styles.roundbutton} /*styles={{allignItems:"center"}}*/
+                        style={styles.roundbutton}
                         onPress={() => navigation.navigate("Dashboard")}
                     >
                         <Text style={{ fontSize: 25, color: "white" }}>Home</Text>
@@ -52,8 +52,8 @@ const ThankYou = ({ navigation }) => {
 };
 
 const styles = StyleSheet.create({
-    
-        roundbutton: {
+
+    roundbutton: {
         width: 120,
         height: 60,
         justifyContent: "center",
