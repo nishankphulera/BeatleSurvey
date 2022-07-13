@@ -3,85 +3,88 @@ import { ScrollView, TextInput, TouchableOpacity } from 'react-native'
 import React, { useState } from 'react'
 import Footer from './Footer';
 
-const Input = () => {
+const Input = ({ navigation }) => {
     const { text, setText } = useState('');
     return (
 
         <ScrollView>
-            <View>
-                <View style={{ backgroundColor: "red", opacity: 0.8, height: 40 }}>
+            <View >
+                <View style={{ opacity: 0.8, height: 40 }}>
                     <View style={{ alignItems: "center", justifyContent: "center" }}>
-                        <Text style={{ fontSize: 25, color: "white" }}>
+                        <Text style={{ fontSize: 25, color: "black" }}>
                             Suggest Some More Inputs.
                         </Text>
                     </View>
                 </View>
+                <View style={{ backgroundColor: "#56CDD3", height: 750 }}>
+                    <View style={{ justifyContent: "center", margin: 15, marginTop: 30 }}>
+                        <Text style={{ fontSize: 20, color: "black", fontWeight: "bold" }}>
+                            Which is your Prefered Place to stay while visiting this area.
+                        </Text>
+                    </View>
 
-                <View style={{ margin: 10, justifyContent: "center" }}>
-                    <Text style={{ fontSize: 20, color: "black" }}>
-                        Which is your Prefered Place to stay while visiting this area.
-                    </Text>
-                </View>
-                <View style={{ padding: 10 }}>
-                    <TextInput
-                        style={{ height: 40, fontSize: 15 }}
-                        placeholder="Please suggest!"
-                        onChangeText={newText => setText(newText)}
-                        defaultValue={text}
-                    />
+                    <View style={{ margin: 10, padding: 10, backgroundColor: "white", height: 40, borderRadius: 10 }}>
+                        <TextInput placeholderTextColor="black" placeholder="Please Write Here!" />
+                    </View>
 
-                    <TouchableOpacity
-                        style={styles.roundbutton} /*styles={{allignItems:"center"}}*/
-                    // onPress={() => navigation.navigate("Dashboard")}
-                    >
-                        <Text style={{ fontSize: 15, color: "white" }}>Next</Text>
-                    </TouchableOpacity>
-                </View>
-                <View style={{ margin: 10, justifyContent: "center" }}>
-                    <Text style={{ fontSize: 20, color: "black" }}>
-                        What else we can do to make your next stay more satishfying.
-                    </Text>
-                </View>
+                    <View style={{ padding: 10 }}>
+                        <TouchableOpacity
+                            style={styles.roundbutton} /*styles={{allignItems:"center"}}*/
+                        // onPress={() => navigation.navigate("")}
+                        >
+                            <Text style={{ fontSize: 15, color: "white" }}>Next</Text>
+                        </TouchableOpacity>
+                    </View>
+                    <View style={{ margin: 15, justifyContent: "center", marginTop: 30 }}>
+                        <Text style={{ fontSize: 20, color: "black", fontWeight: "bold" }}>
+                            What else we can do to make your next stay more satishfying.
+                        </Text>
+                    </View>
 
-                <View style={{ padding: 10 }}>
-                    <TextInput
-                        style={{ height: 40, fontSize: 15 }}
-                        placeholder="Please suggest!"
-                        onChangeText={newText => setText(newText)}
-                        defaultValue={text}
-                    />
+                    <View style={{ margin: 10, padding: 10, backgroundColor: "white", height: 40, borderRadius: 10 }}>
+                        <TextInput placeholderTextColor="black" placeholder="Please Write Here!" />
+                    </View>
 
-                    <TouchableOpacity
-                        style={styles.roundbutton1} /*styles={{allignItems:"center"}}*/
-                    // onPress={() => navigation.navigate("Dashboard")}
-                    >
-                        <Text style={{ fontSize: 15, color: "white" }}>Next</Text>
-                    </TouchableOpacity>
-                </View>
+                    <View style={{ padding: 10 }}>
+                        <TouchableOpacity
+                            style={styles.roundbutton1} /*styles={{allignItems:"center"}}*/
+                        // onPress={() => navigation.navigate("")}
+                        >
+                            <Text style={{ fontSize: 15, color: "white" }}>Next</Text>
+                        </TouchableOpacity>
+                    </View>
 
-                <View style={{ margin: 10, justifyContent: "center" }}>
-                    <Text style={{ fontSize: 20, color: "black" }}>
-                        Our Feedback about you is.
-                    </Text>
-                </View>
+                    <View style={{ margin: 15, justifyContent: "center", marginTop: 30 }}>
+                        <Text style={{ fontSize: 20, color: "black", fontWeight: "bold" }}>
+                            Our Feedback about you is.
+                        </Text>
+                    </View>
 
-                <View style={{ padding: 10 }}>
-                    <TextInput
-                        style={{ height: 40, fontSize: 15 }}
-                        placeholder="Thanks For Visiting!"
-                        onChangeText={newText => setText(newText)}
-                        defaultValue={text}
-                    />
+                    <View style={{ margin: 10, padding: 10, backgroundColor: "white", height: 40, borderRadius: 10 }}>
+                        <TextInput placeholderTextColor="black" placeholder="Please Write Here!" />
+                    </View>
 
-                    <TouchableOpacity
-                        style={styles.roundbutton2} /*styles={{allignItems:"center"}}*/
-                    // onPress={() => navigation.navigate("Dashboard")}
-                    >
-                        <Text style={{ fontSize: 15, color: "white" }}>Next</Text>
-                    </TouchableOpacity>
+
+                    <View style={{ padding: 10, marginBottom: 60 }}>
+
+                        <TouchableOpacity
+                            style={styles.roundbutton2} /*styles={{allignItems:"center"}}*/
+                        // onPress={() => navigation.navigate("")}
+                        >
+                            <Text style={{ fontSize: 15, color: "white" }}>Next</Text>
+                        </TouchableOpacity>
+                    </View>
+                    <View style={{marginTop:-30}}>
+                        <TouchableOpacity
+                            style={styles.roundbutton5}
+                            onPress={() => navigation.navigate("ThankYou")}
+                        >
+                            <Text style={{ fontSize: 25, color: "white" }}>Submit</Text>
+                        </TouchableOpacity>
+                    </View>
                 </View>
             </View>
-            <Footer/>
+            <Footer />
         </ScrollView>
     )
 }
@@ -93,19 +96,19 @@ const styles = StyleSheet.create({
         width: 80,
         height: 40,
         justifyContent: "center",
-        flexDirection:"row",
+        flexDirection: "row",
         alignItems: "center",
         padding: 10,
         borderRadius: 15,
         backgroundColor: "#369398",
         marginLeft: 140,
-        // marginBottom:200,
     },
+
     roundbutton2: {
         width: 80,
         height: 40,
         justifyContent: "center",
-        flexDirection:"row",
+        flexDirection: "row",
         alignItems: "center",
         padding: 10,
         borderRadius: 15,
@@ -117,12 +120,23 @@ const styles = StyleSheet.create({
         width: 80,
         height: 40,
         justifyContent: "center",
-        flexDirection:"row",
+        flexDirection: "row",
         alignItems: "center",
         padding: 10,
         borderRadius: 15,
         backgroundColor: "#369398",
         marginLeft: 140,
-    }
+    },
+    roundbutton5: {
+        width: 120,
+        height: 60,
+        justifyContent: "center",
+        alignItems: "center",
+        padding: 10,
+        borderRadius: 15,
+        backgroundColor: "#369398",
+        marginLeft: 140,
+
+    },
 
 })
