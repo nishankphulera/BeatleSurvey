@@ -14,20 +14,29 @@ import Footer from "./Footer";
 const Welcome = ({ navigation }) => {
   return (
     <ScrollView>
-      <View style={{ backgroundColor: "white", height: 730 }}>
-        <View style={{ alignItems: "center", justifyContent: "center" }}>
-          <Text
-            style={{ alignItems: "center", fontSize: 30, color: "#939393" }}
-          >
-            Welcome to
-          </Text>
+      <View style={{ backgroundColor: "white", height: 770 }}>
+
+        <View style={{ height: 50 }}>
+          <TouchableOpacity
+            onPress={() => navigation.navigate("ModalTester")}>
+            <Image style={{ height: 50, width: 50, marginTop: 10, marginHorizontal:10, marginBottom: -20 }} source={require("../assets/icons8-user-60.png")} />
+          </TouchableOpacity>
+
+
+          <View style={{ alignItems: "center", justifyContent: "center", marginBottom:20, marginTop:-30 }}>
+            <Text
+              style={{ alignItems: "center", fontSize: 30, color: "#939393" }}
+            >
+              Welcome To
+            </Text>
+          </View>
         </View>
         <View style={styles.imagestyler}>
           <Image
             style={{
               width: 140,
               position: "relative",
-              left: 100,
+              left: 120,
               marginBottom: 0,
               height: 90,
               marginTop: 10,
