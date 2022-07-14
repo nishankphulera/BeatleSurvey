@@ -14,7 +14,7 @@ import Footer from "./Footer";
 const Dashboard = ({ navigation }) => {
   return (
     <ScrollView>
-      <View style={{ backgroundColor: "white", height: 700 }}>
+      <View style={{ backgroundColor: "white", height: 730 }}>
         <View style={{ alignItems: "center", justifyContent: "center" }}>
           <Text
             style={{
@@ -64,7 +64,7 @@ const Dashboard = ({ navigation }) => {
           >
             <TouchableOpacity
               style={styles.roundbutton}
-              onPress={() => navigation.navigate("Info")}
+              onPress={() => navigation.navigate("CustFeedBackWel")}
             >
               <Text style={{ fontSize: 25, color: "white" }}>Feedback</Text>
             </TouchableOpacity>
@@ -78,7 +78,7 @@ const Dashboard = ({ navigation }) => {
           >
             <TouchableOpacity
               style={styles.roundbutton}
-              onPress={() => navigation.navigate("Info")}
+              onPress={() => navigation.navigate("Complaint")}
             >
               <Text style={{ fontSize: 25, color: "white" }}>Complaint</Text>
             </TouchableOpacity>

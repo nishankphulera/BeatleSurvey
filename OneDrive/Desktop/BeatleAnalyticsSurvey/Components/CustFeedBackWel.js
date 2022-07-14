@@ -28,8 +28,8 @@ const CustFeedBackWelWel = ({ navigation }) => {
                         Welcome Guest
                     </Text>
                 </View>
-                <View style={{ backgroundColor: "#369398", height: 680 }}>
-                    <View style={{ alignItems: "center", marginTop: 25, justifyContent: "center", backgroundColor: "#369398" }}>
+                <View style={{ backgroundColor: "#56CDD3", height: 680 }}>
+                    <View style={{ alignItems: "center", marginTop: 25, justifyContent: "center" }}>
                         <Text style={{ fontSize: 20, color: "white" }}>
                             Quality is never an accident. It is always the result of an intelligent effort.
 
@@ -43,8 +43,7 @@ const CustFeedBackWelWel = ({ navigation }) => {
                             placeholderStyle={styles.placeholderStyle}
                             selectedTextStyle={styles.selectedTextStyle}
                             inputSearchStyle={styles.inputSearchStyle}
-                            // iconStyle={styles.iconStyle}
-                            // valueStyle={styles.valueStyle}
+
                             data={data}
                             search
                             maxHeight={250}
@@ -54,12 +53,10 @@ const CustFeedBackWelWel = ({ navigation }) => {
                             searchPlaceholder="Search..."
                             value={value}
                             onChange={item => { setValue(item.value); }}
-                        // renderLeftIcon={() => (
-                        //     <AntDesign style={styles.icon} color="black" name="Safety" size={20} />
-                        // )}
+
                         />
                     </View>
-                    <View style={{ alignItems: "center", marginHorizontal: 15, marginBottom: 5, justifyContent: "center", backgroundColor: "#369398", marginTop: 10 }}>
+                    <View style={{ alignItems: "center", marginHorizontal: 15, marginBottom: 5, justifyContent: "center", marginTop: 10 }}>
                         <Text style={{ fontSize: 20, color: "white" }}>
                             Please Rate Our Food Quality As per the Taste and Packaging.
                             It Helps Us to Serve You in a Better Way. ThankYou!
@@ -72,8 +69,7 @@ const CustFeedBackWelWel = ({ navigation }) => {
                             placeholderStyle={styles.placeholderStyle}
                             selectedTextStyle={styles.selectedTextStyle}
                             inputSearchStyle={styles.inputSearchStyle}
-                            // iconStyle={styles.iconStyle}
-                            // valueStyle={styles.valueStyle}
+
                             data={data}
                             search
                             maxHeight={250}
@@ -86,7 +82,7 @@ const CustFeedBackWelWel = ({ navigation }) => {
 
                         />
                     </View>
-                    <View style={{ alignItems: "center", marginHorizontal: 15, marginBottom: 5, justifyContent: "center", backgroundColor: "#369398", marginTop: 10 }}>
+                    <View style={{ alignItems: "center", marginHorizontal: 15, marginBottom: 5, justifyContent: "center", marginTop: 10 }}>
                         <Text style={{ fontSize: 20, color: "white" }}>
                             Please Rate Our Beverage Quality As per the Taste and Packaging.
                             It Helps Us to Serve You in a Better Way. ThankYou!
@@ -102,7 +98,7 @@ const CustFeedBackWelWel = ({ navigation }) => {
                         }}
                     >
                         <TouchableOpacity
-                            style={styles.roundbutton} /*styles={{allignItems:"center"}}*/
+                            style={styles.roundbutton}
                             onPress={() => navigation.navigate("FeedBackSum")}
                         >
                             <Text style={{ fontSize: 25, color: "white" }}>Submit</Text>
@@ -127,8 +123,6 @@ const styles = StyleSheet.create({
         borderBottomColor: 'gray',
         borderBottomWidth: 0.5,
         borderBottomEndRadius: 10
-        // borderRadius:14
-
 
     },
 
@@ -139,19 +133,14 @@ const styles = StyleSheet.create({
         alignItems: "center",
         padding: 10,
         borderRadius: 15,
-        backgroundColor: "#48d1cc",
+        backgroundColor: "#369398",
         marginLeft: 120,
     },
-    // icon: {
-    //     marginRight: 5,
-    // },
+
     placeholderStyle: {
         fontSize: 22,
         padding: 2,
         paddingBottom: 2,
-        // margin:5,
-
-        // alignItems:"center",
         fontWeight: "bold",
         textAlign: "center",
 
@@ -160,17 +149,11 @@ const styles = StyleSheet.create({
     selectedTextStyle: {
         fontSize: 25,
         fontWeight: "bold",
-        // backgroundColor:"#e0ffff"
-        // borderBottomEndRadius:10
     },
-    // iconStyle: {
-    //     width: 20,
-    //     height: 20,
-    // },
+
 
     inputSearchStyle: {
         height: 50,
-        // fontWeight: "bold",
         fontSize: 20,
         borderRadius: 12,
         backgroundColor: "#e0ffff"

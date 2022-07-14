@@ -14,20 +14,29 @@ import Footer from "./Footer";
 const Welcome = ({ navigation }) => {
   return (
     <ScrollView>
-      <View style={{ backgroundColor: "white", height: 700 }}>
-        <View style={{ alignItems: "center", justifyContent: "center" }}>
-          <Text
-            style={{ alignItems: "center", fontSize: 30, color: "#939393" }}
-          >
-            Welcome to
-          </Text>
+      <View style={{ backgroundColor: "white", height: 770 }}>
+
+        <View style={{ height: 50 }}>
+          <TouchableOpacity
+            onPress={() => navigation.navigate("ModalTester")}>
+            <Image style={{ height: 50, width: 50, marginTop: 10, marginHorizontal:10, marginBottom: -20 }} source={require("../assets/icons8-user-60.png")} />
+          </TouchableOpacity>
+
+
+          <View style={{ alignItems: "center", justifyContent: "center", marginBottom:20, marginTop:-30 }}>
+            <Text
+              style={{ alignItems: "center", fontSize: 30, color: "#939393" }}
+            >
+              Welcome To
+            </Text>
+          </View>
         </View>
         <View style={styles.imagestyler}>
           <Image
             style={{
               width: 140,
               position: "relative",
-              left: 100,
+              left: 120,
               marginBottom: 0,
               height: 90,
               marginTop: 10,
@@ -39,7 +48,7 @@ const Welcome = ({ navigation }) => {
           style={{
             alignItems: "center",
             justifyContent: "center",
-            marginTop: 20,
+            marginTop: 10,
           }}
         >
           <Text
@@ -53,7 +62,7 @@ const Welcome = ({ navigation }) => {
             style={{
               alignItems: "center",
               justifyContent: "center",
-              height: 30,
+              height: 35,
               backgroundColor: "#56CDD3",
               width: "99%",
               borderTopLeftRadius: 32,
@@ -89,9 +98,12 @@ const Welcome = ({ navigation }) => {
         </View>
         <View
           style={{
-            marginBottom: 30,
-            // alignItems: "center",
+            // marginTop: 50,
+            // marginBottom: 30,
+            // marginLeft: 20,
             justifyContent: "center",
+            // height:50
+
           }}
         >
           <TouchableOpacity
@@ -102,8 +114,8 @@ const Welcome = ({ navigation }) => {
           </TouchableOpacity>
         </View>
       </View>
-
       <Footer />
+
     </ScrollView>
   );
 };
@@ -124,14 +136,15 @@ const styles = StyleSheet.create({
     borderBottomRightRadius: 32,
   },
   roundbutton: {
-    width: 120,
+    width: 140,
     height: 60,
     justifyContent: "center",
     alignItems: "center",
     padding: 10,
     borderRadius: 15,
     backgroundColor: "#369398",
-    marginLeft: 120,
-  },
-});
+    marginLeft: 130,
+    // marginBottom:100
+  }
+})
 export default Welcome;

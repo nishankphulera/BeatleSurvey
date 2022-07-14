@@ -1,9 +1,9 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React, { useState } from 'react'
-import { ScrollView, TextInput, Button } from 'react-native'
+import { ScrollView, TextInput } from 'react-native'
 import { Dropdown } from 'react-native-element-dropdown';
-// import AntDesign from 'react-native-vector-icons/AntDesign';
 import Footer from './Footer';
+import { TouchableOpacity } from 'react-native';
 
 
 const data = [
@@ -17,26 +17,20 @@ const data = [
     // { label: 'Item 8', value: '8' },
 ];
 
-const Complaint = () => {
+const Complaint = ({ navigation }) => {
     const [value, setValue] = useState(null);
     const { text, setText } = useState('');
     return (
         <ScrollView>
             <View>
-                {/* <View style={{ backgroundColor: "red", opacity: 0.8, height: 80 }}>
-                    <View style={{ alignItems: "center", justifyContent: "center" }}>
-                        <Text style={{ alignItems: "center", fontSize: 30, color: "black" }}>
-                            Welcome to Beatle Analytics!
-                        </Text>
-                    </View>
-                </View> */}
+
                 <View style={{ alignItems: "center", margin: 10, justifyContent: "center" }}>
                     <Text style={{ fontSize: 25, color: "black" }}>
                         Welcome Guest
                     </Text>
                 </View>
-                <View style={{ backgroundColor: "#369398", height: 680 }}>
-                    <View style={{ alignItems: "center", margin: 10, justifyContent: "center", backgroundColor: "#369398" }}>
+                <View style={{ backgroundColor: "#56CDD3", height: 680 }}>
+                    <View style={{ alignItems: "center", margin: 10, justifyContent: "center", }}>
                         <Text style={{ fontSize: 25, color: "white" }}>
                             Post Your Complaint!
                         </Text>
@@ -47,7 +41,7 @@ const Complaint = () => {
                             placeholderStyle={styles.placeholderStyle}
                             selectedTextStyle={styles.selectedTextStyle}
                             inputSearchStyle={styles.inputSearchStyle}
-                            // iconStyle={styles.iconStyle}
+
                             data={data}
                             search
                             maxHeight={250}
@@ -57,9 +51,7 @@ const Complaint = () => {
                             searchPlaceholder="Search..."
                             value={value}
                             onChange={item => { setValue(item.value); }}
-                        // renderLeftIcon={() => (
-                        //     <AntDesign style={styles.icon} color="black" name="Safety" size={20} />
-                        // )}
+
                         />
                     </View>
 
@@ -69,7 +61,6 @@ const Complaint = () => {
                             placeholderStyle={styles.placeholderStyle}
                             selectedTextStyle={styles.selectedTextStyle}
                             inputSearchStyle={styles.inputSearchStyle}
-                            // iconStyle={styles.iconStyle}
                             data={data}
                             search
                             maxHeight={250}
@@ -79,51 +70,28 @@ const Complaint = () => {
                             searchPlaceholder="Search..."
                             value={value}
                             onChange={item => { setValue(item.value); }}
-                        // renderLeftIcon={() => (
-                        //     <AntDesign style={styles.icon} color="black" name="Safety" size={20} />
-                        // )}
+
                         />
                     </View>
                     <View style={{ padding: 25 }}>
                         <Text style={{ fontSize: 25, color: "white" }}>
                             Please write your complain here.
                         </Text>
-                        <TextInput
-                            style={{ height: 150, fontSize: 15, backgroundColor: "white", borderRadius: 15 }}
-                            placeholder="write here!"
-                            onChangeText={newText => setText(newText)}
-                            defaultValue={text}
-                        />
+                        <View style={{ marginTop: 15, backgroundColor: "white", height: 160, borderRadius: 10 }}>
+                            <TextInput placeholderTextColor="black" placeholder="Please Write Here!" />
+                        </View>
                     </View>
-                    {/* <View style={styles.buttonStyle}>
-                        <Button
-                            title={"Re-Survey"}
-                            style={styles.buttonStyle}
-                            onPress={() => {
-                                this.setState({ submitted: true });
-                            }}
-                            color="#369398"
-                        />
 
-                    </View>
-                    <View style={styles.buttonStyle}>
-                        <Button
-                            title={"Submit"}
-                            onPress={() => {
-                                this.setState({ submitted: false });
-                            }}
-                            color="#369398"
-                        />
-                    </View> */}
                     <View style={{ marginTop: 10 }}>
                         <View style={styles.container}>
-                            {/* <Button title="submit"/> */}
-                            <View style={styles.button}>
+
+                            <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("Complaint")}>
                                 <Text style={{ fontSize: 25, color: "white", padding: 2, textAlign: "center" }}>Re-Survey</Text>
-                            </View>
-                            <View style={styles.button}>
+                            </TouchableOpacity>
+
+                            <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("ThankYou")}>
                                 <Text style={{ fontSize: 25, color: "white", padding: 2, textAlign: "center" }}>Submit</Text>
-                            </View>
+                            </TouchableOpacity>
                         </View>
                     </View>
 
@@ -150,30 +118,23 @@ const styles = StyleSheet.create({
 
 
     },
-    // icon: {
-    //     marginRight: 5,
-    // },
     placeholderStyle: {
         fontSize: 20,
         padding: 1.5,
-        // margin:5,
-        // alignItems:"center",
         fontWeight: "bold",
         textAlign: "center",
-        // borderRadius:20
+
     },
     selectedTextStyle: {
         fontSize: 16,
         textAlign: "center"
     },
-    // iconStyle: {
-    //     width: 20,
-    //     height: 20,
-    // },
+
     inputSearchStyle: {
         height: 40,
         fontSize: 16,
     },
+
     // buttonStyle: {
     //     marginHorizontal: 20,
     //     marginTop: 5,
@@ -184,11 +145,11 @@ const styles = StyleSheet.create({
         flex: 1,
         flexDirection: 'row',
         justifyContent: 'space-between',
-        // borderRadius:15
         margin: 18
     },
+
     button: {
-        backgroundColor: `#a9a9a9`,
+        backgroundColor: `#369398`,
         width: '40%',
         height: 50,
         borderRadius: 15

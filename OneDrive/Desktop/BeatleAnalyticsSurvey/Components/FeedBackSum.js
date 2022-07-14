@@ -1,23 +1,23 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View, TouchableOpacity, ScrollView } from 'react-native'
 import React, { useState } from 'react'
 import { CheckBox } from 'react-native-elements'
-import { ScrollView } from 'react-native'
 import Footer from './Footer'
 
 
-const FeedBackSum = () => {
+const FeedBackSum = ({ navigation }) => {
     const { Checked, setChecked } = useState(false)
 
     return (
         <ScrollView>
-            <View>
-                <View style={{ backgroundColor: "red", opacity: 0.8, height: 40 }}>
-                    <View style={{ alignItems: "center", justifyContent: "center" }}>
-                        <Text style={{ fontSize: 30, color: "white" }}>
-                            Your Over All Visit.
-                        </Text>
-                    </View>
+            <View style={{ height: 40 }}>
+                <View style={{ alignItems: "center", justifyContent: "center" }}>
+                    <Text style={{ fontSize: 30, color: "black" }}>
+                        Your Over All Visit.
+                    </Text>
                 </View>
+            </View>
+            <View style={{ backgroundColor: "#56CDD3" }}>
+
 
                 <View style={{ margin: 10, justifyContent: "center" }}>
                     <Text style={{ fontSize: 25, color: "black" }}>
@@ -38,8 +38,8 @@ const FeedBackSum = () => {
 
                 </CheckBox>
 
-                <View style={{margin:10, justifyContent:"center" }}>
-                    <Text style={{fontSize:25, color:"black"}}>
+                <View style={{ margin: 10, justifyContent: "center" }}>
+                    <Text style={{ fontSize: 25, color: "black" }}>
                         Recommend Us?
                     </Text>
                 </View>
@@ -83,18 +83,7 @@ const FeedBackSum = () => {
                     onPress={() => setChecked(!Checked)}>
 
                 </CheckBox>
-                {/* <CheckBox
-                    title={'My Sister'}
-                    checked={Checked}
-                    onPress={() => setChecked(!Checked)}>
 
-                </CheckBox> */}
-                {/* <CheckBox
-                    title={'My relatives'}
-                    checked={Checked}
-                    onPress={() => setChecked(!Checked)}>
-
-                </CheckBox> */}
 
                 <View style={{ margin: 10, justifyContent: "center" }}>
                     <Text style={{ fontSize: 25, color: "black" }}>
@@ -116,15 +105,43 @@ const FeedBackSum = () => {
 
                 </CheckBox>
 
+                <View
+                    style={{
+                        marginTop: 50,
+                        marginBottom: 30,
+                        marginLeft: 20,
+                        justifyContent: "center",
+
+                    }}
+                >
+                    <TouchableOpacity
+                        style={styles.roundbutton}
+                        onPress={() => navigation.navigate("Input")}
+                    >
+                        <Text style={{ fontSize: 25, color: "white" }}>Submit</Text>
+                    </TouchableOpacity>
+                </View>
+
 
 
 
             </View>
-            <Footer/>
+            <Footer />
         </ScrollView>
     )
 }
 
 export default FeedBackSum
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+    roundbutton: {
+        width: 120,
+        height: 60,
+        justifyContent: "center",
+        alignItems: "center",
+        padding: 10,
+        borderRadius: 15,
+        backgroundColor: "#369398",
+        marginLeft: 120,
+    },
+})
